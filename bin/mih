@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#
+# vim: set filetype=ruby expandtab tabstop=2 shiftwidth=2 tw=80
+#
+$: << File.join(File.dirname(File.dirname($0)), "lib")
+require 'mih'
+
+Arguments.new(ARGV).process
