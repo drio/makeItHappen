@@ -20,7 +20,7 @@ module Mih
       Mih::Target.load name
     end
     vd = c_vertices.inject([]) {|vs, v| c_deps.include?(v.name) ? vs << v : vs}
-    puts "CMD: #{o.cmd} TARGET: #{o.name} DEPS: #{o.deps} G_SIZE: #{c_vertices.size}"
+    #puts "CMD: #{o.cmd} TARGET: #{o.name} DEPS: #{o.deps} G_SIZE: #{c_vertices.size}"
 
     # If we couldn't find the deps in the graph, create them
     # Those should be the first targets on the makefile.
@@ -35,9 +35,9 @@ module Mih
     # Create all the necessary to represent the depencies
     vd.each do |v|
       dg.add_edge v, new_vertex.to_s
-      puts "#{v.to_s} -> #{new_vertex.to_s}"
+      #puts "#{v.to_s} -> #{new_vertex.to_s}"
     end
-    puts ""
+    #puts ""
 
     # Dump the new graph
     dg.write_to_graphic_file
