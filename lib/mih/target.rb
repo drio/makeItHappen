@@ -14,7 +14,9 @@ module Mih
     end
 
     def self.load(n)
-      File.open(Digest::MD5.hexdigest(n) + ".dump", "r") {|f| Marshal.load(f) }
+      ns = n.gsub(/\s+$/, '')
+      #puts "loading: -#{n}- -- #{Digest::MD5.hexdigest(n) + ".dump"} "
+      File.open(Digest::MD5.hexdigest(ns) + ".dump", "r") {|f| Marshal.load(f) }
     end
 
     def to_s

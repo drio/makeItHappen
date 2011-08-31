@@ -35,7 +35,10 @@ module Mih
         raise
       end
     else
-      RGL::DirectedAdjacencyGraph[]
+      Mih::Target.new({ :name => 'root' }).save
+      dg = RGL::DirectedAdjacencyGraph[]
+      dg.add_vertex "root"
+      dg
     end
   end
 end
