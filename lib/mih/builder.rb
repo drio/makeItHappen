@@ -18,20 +18,11 @@ module Mih
     c_vertices = dg.vertices.map! {|v| Mih::Target.load v.gsub(/\s+$/, '') }
     # Find the list of vertices the new vertex is depending on
     vd = c_vertices.inject([]) {|vs, v| c_deps.include?(v.name) ? vs << v : vs}
-    puts "CMD: #{o.cmd} TARGET: #{o.name} DEPS: #{o.deps} G_SIZE: #{c_vertices.size}"
+    puts "> CMD: #{o.cmd} TARGET: #{o.name} DEPS: #{o.deps} G_SIZE: #{c_vertices.size}"
 
     # If we couldn't find the deps in the graph, create them
     # Those should be the first targets on the makefile.
     puts "> (o.name = #{o.name}) : c_deps = #{c_deps} : c_vertices = #{c_vertices} : dg.size: #{dg.size}"
-    #if vd.size == 0
-    #  puts "--> vd.size == 0 !!!"
-    #  c_deps.each do |d|
-    #    puts "----> saving hack .."
-    #    n_vert = Mih::Target.new( { :name => d, :cmd => 'xxxxxxxxxx#' }).save
-    #    dg.add_vertex n_vert.to_s
-    #    vd << n_vert.to_s
-    #  end
-    #end
     vd << "root" if vd.size == 0 && c_deps.size == 0
 
     # Connect the vertex to represent the dependencies
@@ -39,7 +30,7 @@ module Mih
       dg.add_edge v, new_vertex.to_s
       #puts "#{v.to_s} -> #{new_vertex.to_s}"
     end
-    #puts ""
+    puts ""
 
     # Dump the new graph
     dg.write_to_graphic_file
