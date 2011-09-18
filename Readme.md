@@ -149,4 +149,4 @@
   a better way so the job objects can be included within the file that represents
   the DG. Feel free to look around.
 
-  There are some other things. But I hope we can work on them all together.
+  There are some other things but I hope we can work on them all together.
