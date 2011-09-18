@@ -93,7 +93,7 @@
   the graph when we execute the makefile.
 
   The prefix is just a call to mih. The suffix has some classic information
-  related the execution of that recipe.
+  related to the execution of that recipe.
 
   If we execute the makefile, a dot file should be created in our working
   directory. That's a representation of our graph. You should see some files
