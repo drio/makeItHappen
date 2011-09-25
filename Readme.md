@@ -43,6 +43,7 @@
   the results with the great set of [Picard tools](http://picard.sourceforge.net/command-line-overview.shtml).
 
   Our make file may look like this:
+
     #
     REAL_REF=../indexes/rhemac.masked.classIII.fasta
     N_THREADS=1
