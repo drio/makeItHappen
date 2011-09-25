@@ -143,7 +143,7 @@
   Mih is just a weekend project, but I hope you like it and decide to use it
   and improve it. All type of Feedback is very welcome.
 
-  There quite a few things that I'd like to improve. The most important one is
+  There are quite a few things that I'd like to improve. The most important one is
   removing the need of marshalling all the jobs objects to disk.  I had to do
   that because I was having issues parsing them with
   [RGL](http://rgl.rubyforge.org/rgl/index.html). I am sure there has to be
